@@ -1,0 +1,6 @@
+sudo 915resolution 3a 1680 1050 8 1784 1053
+sudo 915resolution 4b 1680 1050 16 1784 1053
+sudo 915resolution 5a 1680 1050 32 1784 1053
+sudo 915resolution 3c 1440 900 8
+sudo 915resolution 4d 1440 900 16
+sudo 915resolution 5c 1440 900 32

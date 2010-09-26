@@ -1,0 +1,2 @@
+xfs_fsr -v /dev/sda3
+xfs_fsr -v /dev/sdb2

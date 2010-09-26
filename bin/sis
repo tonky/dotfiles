@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh tonky@72.55.146.6:/home/www/softlaunch.surveyinvite.net

@@ -1,0 +1,7 @@
+sudo ifconfig eth0 del fe80::215:c5ff:fe75:8e2c/64
+sudo ifconfig eth0 add 192.168.1.12
+# broadcast 255.255.255.0
+sudo route add -host 192.168.1.99 eth0
+sudo route add default gw 192.168.1.99 dev eth0
+sudo chown tonky /etc/resolv.conf
+echo "nameserver 192.168.1.99" > /etc/resolv.conf

@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo du -hc --max-depth=1
+# du -hs `ls -A`
+# du -achP $1

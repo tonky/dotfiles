@@ -1,0 +1,4 @@
+#!/bin/bash
+rm ~/.kde/share/apps/amarok/undo/*
+sudo tar zcfv /media/sda6/arch/home_tonky_`date +%Y%m%d`.tar.gz --exclude="Cache" --exclude="tmp" --exclude=".wine" --exclude=".local" --exclude=".ies4linux" -- exclude ="incoming" /home/tonky
+# rar a -m5 /media/storage/arch/home_tonky_`date +%Y%m%d`.tar.rar /media/storage/arch/home_tonky_`date +%Y%m%d`.tar

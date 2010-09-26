@@ -1,0 +1,2 @@
+sudo xfs_db -c frag -r /dev/sda3
+sudo xfs_db -c frag -r /dev/sdb2

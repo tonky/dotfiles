@@ -1,0 +1,2 @@
+#!/bin/bash
+bzip2 -dc $1 | tar -x

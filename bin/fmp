@@ -1,0 +1,2 @@
+cd /home/repos/myplace
+pftp -i 66.246.246.168 2121

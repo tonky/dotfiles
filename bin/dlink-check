@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# conns=200
+
+if [ -e /home/tonky/.rtorrent/session/rtorrent.lock ]
+then
+    conns=`netstat | grep -i established | wc -l`;
+
+    if ((conns < 30))
+    then 
+        if wget google.com -T 20 -O - > /tmp/google.html
+        then 
+            echo "rtorrent running low connections, google was downloaded fine";
+        else 
+            echo "rtorrent running low connections and no google, rebooting";
+            wget --user admin --password tonky-admin http://192.168.1.1/rebootinfo.cgi
+        fi
+    else
+        echo "rtorrent running, connections are ok";
+    fi
+else
+    if wget google.com -T 20 -O - > /tmp/google.html
+    then 
+        echo "no rtorrent and google was downloaded fine";
+    else 
+        echo "no rtorrent and no google, rebooting";
+        wget --user admin --password tonky-admin http://192.168.1.1/rebootinfo.cgi
+    fi
+fi

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+    echo "enter drive path, eg. 'umnt_disk sdb5'"
+fi
+
+if [ ! -d /tmp/$1 ]
+then
+    echo "$1 drive not found in /tmp, trying to unmount from /dev/$1"
+    sudo umount /dev/$1
+    exit
+fi
+
+sudo umount /dev/$1
+rmdir /tmp/$1

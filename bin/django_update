@@ -1,0 +1,1 @@
+sudo svn co http://code.djangoproject.com/svn/django/trunk/ /var/lib/django-trunk

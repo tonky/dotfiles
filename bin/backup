@@ -1,0 +1,5 @@
+# sudo rsync -rbvotmhilpEg /home /media/xfs/backup/
+
+sudo rdiff-backup /etc /media/backup/etc/
+sudo rdiff-backup /home /media/backup/home/
+sudo rdiff-backup /media/storage/music/ /media/xfs/music/

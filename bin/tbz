@@ -1,0 +1,25 @@
+#!/bin/bash
+
+FILELIST=*
+
+if [ -z $1 ]; then
+	echo usage: $0 archivename\(no extension\) [list of files to archive]
+	exit
+fi
+
+if [ -n "$2" ]; then FILELIST=$2; fi
+if [ -n "$3" ]; then FILELIST="$FILELIST $3"; fi
+if [ -n "$4" ]; then FILELIST="$FILELIST $4"; fi
+
+ARCHNAME=$1.tar.bz2
+DIRSIZE=`du -bs $FILELIST | awk '{SUM += $1} END { print SUM }'`
+
+# echo $FILELIST
+# echo $DIRSIZE
+
+echo `perl -e "print 'Original: ' . int($DIRSIZE/1024/1024 + .5) . 'Mb'"` 
+
+tar cf - $FILELIST | pv -s $DIRSIZE | pbzip2 -cr > $ARCHNAME
+# tar cf - $FILELIST | pv | pbzip2 -c > $ARCHNAME
+
+# tar -c $FILELIST | pbzip2 -c > $ARCHNAME

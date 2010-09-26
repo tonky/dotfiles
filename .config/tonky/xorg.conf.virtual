@@ -1,0 +1,106 @@
+Section "ServerLayout"
+	Identifier     "Xorg Configured"
+	Screen      0  "Screen0" 0 0
+	InputDevice    "Keyboard0" "CoreKeyboard"
+# PS/2 Mouse not detected
+# Serial Mouse not detected
+        InputDevice    "USB Mouse" "CorePointer"
+EndSection
+
+Section "ServerFlags"
+	Option "AllowMouseOpenFail"  "true"
+	Option "AutoAddDevices" "False"
+EndSection
+
+Section "Files"
+	ModulePath   "/usr/lib/xorg/modules"
+	FontPath     "/usr/share/fonts/misc:unscaled"
+	FontPath     "/usr/share/fonts/misc"
+	FontPath     "/usr/share/fonts/75dpi:unscaled"
+	FontPath     "/usr/share/fonts/75dpi"
+	FontPath     "/usr/share/fonts/100dpi:unscaled"
+	FontPath     "/usr/share/fonts/100dpi"
+	FontPath     "/usr/share/fonts/local"
+	# FontPath     "/usr/share/fonts/PEX"
+# Additional fonts: Locale, Gimp, TTF...
+	# FontPath     "/usr/share/fonts/cyrillic"
+#	FontPath     "/usr/share/lib/X11/fonts/latin2/75dpi"
+#	FontPath     "/usr/share/lib/X11/fonts/latin2/100dpi"
+# True type and type1 fonts are also handled via xftlib, see /etc/X11/XftConfig!
+	# FontPath     "/usr/share/fonts/Type1"
+	# FontPath     "/usr/share/fonts/ttf/western"
+	# FontPath     "/usr/share/fonts/ttf/decoratives"
+	# FontPath     "/usr/share/fonts/truetype"
+	# FontPath     "/usr/share/fonts/truetype/openoffice"
+	# FontPath     "/usr/share/fonts/truetype/ttf-bitstream-vera"
+	# FontPath     "/usr/share/fonts/latex-ttf-fonts"
+	# FontPath     "/usr/share/fonts/defoma/CID"
+	# FontPath     "/usr/share/fonts/defoma/TrueType"
+EndSection
+
+Section "Module"
+    Load  "ddc"  # ddc probing of monitor
+	Load  "dbe"
+	# Load  "dri"
+	Load  "extmod"
+	Load  "glx"
+    Load  "bitmap" # bitmap-fonts
+	# Load  "type1"
+	Load  "freetype"
+	# Load  "record"
+	#   Load  "synaptics"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0"
+	Driver      "keyboard"
+    Option      "CoreKeyboard"
+	Option      "XkbRules" "xorg"
+	Option      "XkbModel" "pc105"
+	Option      "XkbLayout" "us,ru"
+	Option      "XkbOptions" "grp:caps_toggle,grp_led:caps"
+EndSection
+
+Section "InputDevice"
+        Identifier      "USB Mouse"
+        Driver          "mouse"
+        Option          "Device"                "/dev/input/mice"
+	Option		"SendCoreEvents"	"true"
+        Option          "Protocol"              "IMPS/2"
+        Option          "ZAxisMapping"          "4 5"
+        Option          "Buttons"               "5"
+EndSection
+
+Section "Monitor"
+	Identifier "Monitor0"
+	Option "DPMS" "true"
+	HorizSync    28.0 - 65.0 # Warning: This may fry old Monitors
+	VertRefresh  60 # Very conservative. May flicker.
+EndSection
+
+Section "Device"
+	Identifier  "Card0"
+	Driver      "intel"
+	VendorName  "All"
+	BoardName   "All"
+EndSection
+
+Section "Screen"
+	Identifier "Screen0"
+	Device     "Card0"
+	Monitor    "Monitor0"
+	DefaultColorDepth 24
+	SubSection "Display"
+		Depth     24
+		# Modes "1440x900"
+        # Virtual 3120 1050
+        # Virtual 1680 1950
+        # Virtual 3400 1920
+        Virtual 3360 2100
+        # Virtual 1920 2100
+	EndSubSection
+EndSection
+
+# Section "DRI"
+	# Mode 0666
+# EndSection

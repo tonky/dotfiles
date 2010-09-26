@@ -1,0 +1,6 @@
+sudo rsync -rbvotmhilpEg /home /media/xfs/backup/
+sudo rsync -rbvotmhilpEg /etc /media/xfs/backup/
+sudo rsync -rbvotmhilpEg /var /media/xfs/backup/
+sudo rsync -rbvotmhilpEg /usr /media/xfs/backup/
+
+rsync -rbvotmhilpEg /home/tonky/storage/music /media/ntfs/music

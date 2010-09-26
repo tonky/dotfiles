@@ -1,0 +1,8 @@
+xrandr --output DVI-0 --mode 1920x1200 && xrandr --output DVI-1 --mode 1680x1050 && xrandr --output DVI-0 --right-of DVI-1 --rotate left && xrandr --output DVI-1 --pos 0x435
+# xrandr --output DVI-0 --right-of DVI-1 --pos 1680x0 --rotate left
+# xrandr --output DVI-1 --pos 0x435
+
+# xrandr --output DVI-I_2/digital --mode 1920x1200
+# xrandr --output DVI-I_1/digital --mode 1680x1050
+# xrandr --output DVI-I_2/digital --right-of DVI-I_1/digital --rotate left
+# xrandr --output DVI-I_1/digital --pos 0x435
