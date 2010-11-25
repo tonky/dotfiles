@@ -19,6 +19,10 @@ alias yv="youtube-viewer"
 alias pp="pep8 --repeat . && pylint --generated-members=objects -E ."
 alias dt="PYTHONPATH=..:. nosetests -P --with-django -w . -e django"
 
+dsta() { sudo /etc/rc.d/$1 start }
+dsto() { sudo /etc/rc.d/$1 stop }
+dres() { sudo /etc/rc.d/$1 restart }
+
 c() {
     cd $1
     ls -lh --color
@@ -30,23 +34,14 @@ gr() {
 
 bindkey -e
 
-# PS1="[%T] %m:%~ "
+PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}'):$(print '%{\e[0;34m%}%~%{\e[0m%}')$ "
 
 PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/tools
 
 export EDITOR="/usr/bin/vim"
 export DJANGO_SETTINGS_MODULE="settings"
 export NOSE_WITH_CHERRYPYLIVESERVER=1
-
-# zgitinit and prompt_wunjo_setup must be somewhere in your $fpath, see README for more.
-setopt promptsubst
- 
-# Load the prompt theme system
-autoload -U promptinit
-promptinit
- 
-# Use the wunjo prompt theme
-prompt wunjo
+export PACMAN=pacman-color
 
 # The following lines were added by compinstall
 
@@ -71,4 +66,5 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
+setopt hist_ignore_all_dups
 # End of lines configured by zsh-newuser-install

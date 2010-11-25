@@ -7,6 +7,6 @@ exec xmodmap .Xmodmap &
 
 exec ~/.config/tonky/screens_init &
 
-#exec awesome
-xsetroot -cursor_name left_ptr
-exec xmonad
+exec awesome
+#xsetroot -cursor_name left_ptr
+#exec xmonad
