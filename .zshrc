@@ -34,7 +34,8 @@ gr() {
 
 bindkey -e
 
-PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}'):$(print '%{\e[0;34m%}%~%{\e[0m%}')$ "
+PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
+RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
 
 PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/tools
 

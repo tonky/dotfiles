@@ -69,3 +69,11 @@ set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 " let g:slimv_python = '/usr/bin/python'
 let g:slimv_lisp = '/usr/bin/mzscheme'
 " let g:slimv_client = 'python ~/.vim/plugin/slimv.py -r "xterm -e @p @s -l sbcl -s"'
+
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+  autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
+endif
+
+" This beauty remembers where you were the last time you edited the file, and returns to the same position.
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
