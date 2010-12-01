@@ -8,3 +8,4 @@ projects
 .VirtualBox
 workspace
 install
+.vim/swap
