@@ -272,6 +272,13 @@ for i = 1, keynumber do
         awful.key({ modkey }, "F" .. i,
                   function ()
                         local screen = 1
+
+                        local client = client
+                        local c = awful.client.focus.history.get(screen, 0)
+                        if c then client.focus = c end
+
+                        -- awful.focus(screen)
+
                         if tags[screen][i] then
                             awful.tag.viewonly(tags[screen][i])
                         end
@@ -279,6 +286,13 @@ for i = 1, keynumber do
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
                         local screen = 2
+                        -- awful.focus(screen)
+
+                        -- focus the client of the tag we're switching to
+                        local client = client
+                        local c = awful.client.focus.history.get(screen, 0)
+                        if c then client.focus = c end
+
                         if tags[screen][i] then
                             awful.tag.viewonly(tags[screen][i])
                         end
