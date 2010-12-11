@@ -9,3 +9,4 @@ projects
 workspace
 install
 .vim/swap
+.vim/.netrwhist

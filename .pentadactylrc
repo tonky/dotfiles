@@ -3,6 +3,8 @@ set visualbell
 set ssli=2
 set nofs
 
+set passkeys=https://mail.google.com/:jk,https://www.google.com/reader:jk
+
 com! m tabopen http://mininova.org/search/<args>/seeds
 com! t tabopen http://thepiratebay.org/search/<args>/0/7/0
 com! wi tabopen www.google.com/search?q=wikipedia+<args>&btnI=
