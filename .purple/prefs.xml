@@ -110,6 +110,8 @@
 				<pref name='reject_stranger' type='bool' value='1'/>
 				<pref name='notify' type='bool' value='1'/>
 				<pref name='newdir' type='bool' value='0'/>
+				<pref name='stranger' type='int' value='2'/>
+				<pref name='escape' type='bool' value='1'/>
 			</pref>
 			<pref name='statenotify'>
 				<pref name='notify_away' type='bool' value='1'/>
@@ -421,7 +423,7 @@
 			<pref name='custom_font' type='string' value=''/>
 			<pref name='chat'>
 				<pref name='entry_height' type='int' value='54'/>
-				<pref name='userlist_width' type='int' value='158'/>
+				<pref name='userlist_width' type='int' value='156'/>
 				<pref name='x' type='int' value='0'/>
 				<pref name='y' type='int' value='0'/>
 				<pref name='width' type='int' value='340'/>
@@ -464,6 +466,9 @@
 			<pref name='blink' type='bool' value='0'/>
 			<pref name='show' type='string' value='pending'/>
 			<pref name='x11'>
+				<pref name='embedded' type='bool' value='0'/>
+			</pref>
+			<pref name='gtk'>
 				<pref name='embedded' type='bool' value='0'/>
 			</pref>
 		</pref>

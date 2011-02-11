@@ -12,6 +12,7 @@ alias l="ls -lha --color"
 alias e="less"
 alias pg="pgrep -fl"
 alias g="git"
+alias gpp="git pull && git push"
 alias cl="clyde"
 alias sc="sudo clyde"
 alias nl="nload -t 2000 -u K -U M"
@@ -32,6 +33,10 @@ gr() {
     grep -ir $1 *
 }
 
+fnd() {
+    find . -iname "*$1*"
+}
+
 bindkey -e
 
 PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
@@ -43,6 +48,9 @@ export EDITOR="/usr/bin/vim"
 export DJANGO_SETTINGS_MODULE="settings"
 export NOSE_WITH_CHERRYPYLIVESERVER=1
 export PACMAN=pacman-color
+export ARCH=arm
+export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
+export CROSS_COMPILE=$CCOMPILER
 
 # The following lines were added by compinstall
 
