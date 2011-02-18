@@ -49,7 +49,7 @@ export DJANGO_SETTINGS_MODULE="settings"
 export NOSE_WITH_CHERRYPYLIVESERVER=1
 export PACMAN=pacman-color
 export ARCH=arm
-export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
+export CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-
 export CROSS_COMPILE=$CCOMPILER
 
 # The following lines were added by compinstall
