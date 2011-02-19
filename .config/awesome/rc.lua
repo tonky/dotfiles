@@ -225,7 +225,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Mod1" }, "p", function () awful.util.spawn("/usr/bin/pidgin") end),
     awful.key({ modkey, "Mod1" }, "s", function () awful.util.spawn("/usr/bin/skype") end),
     awful.key({ modkey, "Mod1" }, "g", function () awful.util.spawn("/usr/bin/gvim") end),
-    awful.key({ modkey,        }, "c", function () awful.util.spawn("/usr/bin/chromium") end),
+    awful.key({ modkey, "Mod1" }, "c", function () awful.util.spawn("/usr/bin/chromium") end),
     awful.key({ "Control", "Mod1" }, "Delete", function () awful.util.spawn("/usr/bin/xscreensaver-command -lock") end),
 
     -- multimedia keyboard keys

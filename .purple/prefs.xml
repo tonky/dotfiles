@@ -138,6 +138,11 @@
 				<pref name='rt_link' type='bool' value='1'/>
 				<pref name='ms_link' type='bool' value='1'/>
 				<pref name='avatar_size' type='int' value='24'/>
+				<pref name='ort_link' type='bool' value='1'/>
+				<pref name='reply_all_link' type='bool' value='1'/>
+				<pref name='newline_before_msg' type='bool' value='1'/>
+				<pref name='newline_after_msg' type='bool' value='1'/>
+				<pref name='newline_before_links' type='bool' value='0'/>
 			</pref>
 		</pref>
 		<pref name='lopl'/>
