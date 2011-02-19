@@ -1,1 +1,0 @@
-/usr/lib/python2.6/site-packages/Django-1.2.1-py2.6.egg/django/bin/django-admin.py

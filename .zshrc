@@ -23,6 +23,20 @@ alias yv="youtube-viewer"
 alias pp="pep8 --repeat . && pylint --generated-members=objects -E ."
 alias dt="PYTHONPATH=..:. nosetests -P --with-django -w . -e django"
 
+alias ar="adb reboot"
+alias arm="adb remount"
+alias arr="adb reboot recovery"
+alias arb="adb reboot bootloader"
+
+apm() {
+    adb push $1 /system/lib/modules/
+}
+
+alias ffz="sudo fastboot flash zimage"
+alias fr="sudo fastboot reboot"
+
+alias cv="adb shell cat /sys/kernel/debug/acpuclock/current_vdd"
+
 dsta() { sudo /etc/rc.d/$1 start }
 dsto() { sudo /etc/rc.d/$1 stop }
 dres() { sudo /etc/rc.d/$1 restart }
@@ -45,7 +59,7 @@ bindkey -e
 PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
 RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
 
-PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/tools
+PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools
 
 export EDITOR="/usr/bin/vim"
 export DJANGO_SETTINGS_MODULE="settings"
