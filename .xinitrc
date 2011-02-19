@@ -10,9 +10,7 @@ exec ~/.config/tonky/screens_init &
 #exec xmonad
 #exec openbox
 
-sleep 1
-
-xrandr --output DVI-0 --right-of DVI-1 --rotate left && xrandr --output DVI-1 --pos 0x435
+# sleep 1
 
 exec xmodmap .Xmodmap &
 
