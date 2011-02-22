@@ -47,11 +47,66 @@ c() {
 }
 
 gr() {
-    grep -ir $1 *
+    if [ "`which ack`" != "ack not found" ] ; then
+        ack -ir $1 *
+    else
+        grep -ir $1 *
+    fi
 }
 
 fnd() {
     find . -iname "*$1*"
+}
+
+# extract archives.  should handle multiple files.
+function x() {
+     case $@ in 
+         *.tar.bz2)     tar -xvjf "$@"  ;;  
+         *.tar.gz)      tar -xvzf "$@"  ;;
+         *.bz2)     bunzip2 "$@"    ;;
+         *.rar)     unrar x "$@"    ;;
+         *.gz)      gunzip "$@" ;;
+         *.tar)         tar xf "$@" ;;
+         *.tbz2)        tar -xvjf "$@"  ;;
+         *.tgz)     tar -xvzf "$@"  ;;
+         *.zip)     unzip "$@"      ;;
+         *.xpi)     unzip "$@"      ;;
+         *.Z)       uncompress "$@" ;;
+         *.7z)      7z x "$@"   ;;
+         *.ace)     unace e "$@"    ;;
+         *.arj)     arj -y e "$@"   ;;
+         *)         echo "'$@' cannot be extracted via x()" ;;
+     esac
+}
+
+# packs $2-$n into $1 depending on $1's extension.  add more file types as needed
+function pack() {
+     if [ $# -lt 2 ] ; then
+        echo -e "\npack() usage:"
+        echo -e "\tpack archive_file_name file1 file2 ... fileN"
+        echo -e "\tcreates archive of files 1-N\n"
+     else 
+       DEST=$1
+       shift
+
+       case $DEST in 
+        *.tar.bz2)      tar -cvjf $DEST "$@" ;;  
+        *.tar.gz)       tar -cvzf $DEST "$@" ;;  
+        *.zip)          zip -r $DEST "$@" ;;
+        *.xpi)          zip -r $DEST "$@" ;;
+        *)              echo "Unknown file type - $DEST" ;;
+       esac
+     fi
+}
+
+# Prevents x from sleeping while program is running.  Args are program to run, ie "nosleep mplayer file.avi"
+function nosleep() {
+    # if this still doesn't work, fork $@ and run deactivate or reset periodically
+    xset -dpms
+    xset s off
+    $@
+    xset +dpms
+    xset s on
 }
 
 bindkey -e

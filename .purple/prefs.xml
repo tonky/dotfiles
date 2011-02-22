@@ -312,10 +312,10 @@
 			<pref name='counter' type='bool' value='1'/>
 			<pref name='suppress_oops' type='bool' value='1'/>
 			<pref name='prevent_notification' type='bool' value='0'/>
-			<pref name='api_base_post' type='bool' value='1'/>
+			<pref name='api_base_post' type='bool' value='0'/>
 			<pref name='api_base_get_interval' type='int' value='60'/>
 			<pref name='retrieve_count' type='int' value='20'/>
-			<pref name='screen_name_twitter' type='string' value=''/>
+			<pref name='screen_name_twitter' type='string' value='igor_tonky'/>
 			<pref name='password_twitter' type='string' value=''/>
 			<pref name='screen_name_wassr' type='string' value=''/>
 			<pref name='screen_name_identica' type='string' value=''/>
@@ -351,6 +351,7 @@
 				<item value='/usr/lib/purple-2/joinpart.so'/>
 				<item value='/usr/lib/pidgin/notify.so'/>
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
+				<item value='/usr/lib/pidgin/pidgin-twitter.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
 			</pref>
 		</pref>
@@ -513,7 +514,7 @@
 				<pref name='embedded' type='bool' value='0'/>
 			</pref>
 			<pref name='gtk'>
-				<pref name='embedded' type='bool' value='0'/>
+				<pref name='embedded' type='bool' value='1'/>
 			</pref>
 		</pref>
 		<pref name='stock'>
