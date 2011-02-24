@@ -335,6 +335,8 @@
 			<pref name='filter_jisko' type='string' value='(list of users: separated with &apos; ,:;&apos;)'/>
 			<pref name='filter_ffeed' type='string' value='(list of users: separated with &apos; ,:;&apos;)'/>
 			<pref name='icon_dir' type='string' value='/home/tonky/.purple/pidgin-twitter/icons'/>
+			<pref name='akey_twitter' type='string' value='14796311-dYr33Q16vQMwlkv8YEELhvKtYCSs13qiQQqasjg'/>
+			<pref name='asec_twitter' type='string' value='cYwIGSI8SxfOxeTVAGOYPDfozozN8ftZ2g4aWUJeQ'/>
 		</pref>
 	</pref>
 	<pref name='pidgin'>
@@ -514,7 +516,7 @@
 				<pref name='embedded' type='bool' value='0'/>
 			</pref>
 			<pref name='gtk'>
-				<pref name='embedded' type='bool' value='1'/>
+				<pref name='embedded' type='bool' value='0'/>
 			</pref>
 		</pref>
 		<pref name='stock'>

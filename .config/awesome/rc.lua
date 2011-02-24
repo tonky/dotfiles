@@ -234,12 +234,12 @@ globalkeys = awful.util.table.join(
     awful.key({ "Control", "Mod1" }, "Delete", function () awful.util.spawn("/usr/bin/xscreensaver-command -lock") end),
 
     -- multimedia keyboard keys
-    awful.key( {}, "F13", function () awful.util.spawn("/usr/bin/mpc prev") end),
-    awful.key( {}, "F14", function () awful.util.spawn("/usr/bin/mpc toggle") end),
+    awful.key( {}, "F13", function () awful.util.spawn("/usr/bin/ncmpcpp prev") end),
+    awful.key( {}, "F14", function () awful.util.spawn("/usr/bin/ncmpcpp toggle") end),
     awful.key( {}, "F15", function () awful.util.spawn("/usr/bin/amixer -c 0 -- sset Master playback 100dB-") end),
     awful.key( {}, "F16", function () awful.util.spawn("/usr/bin/amixer -c 0 -- sset Master playback 5dB-") end),
     awful.key( {}, "F17", function () awful.util.spawn("/usr/bin/amixer -c 0 -- sset Master playback 5dB+") end),
-    awful.key( {}, "F18", function () awful.util.spawn("/usr/bin/mpc next") end)
+    awful.key( {}, "F18", function () awful.util.spawn("/usr/bin/ncmpcpp next") end)
 )
 
 clientkeys = awful.util.table.join(
