@@ -6,6 +6,8 @@ exec urxvtd -q -f &
 
 exec ~/.config/tonky/screens_init &
 
+exec ~/.config/tonky/marble.sh &
+
 #xsetroot -cursor_name left_ptr
 #exec xmonad
 #exec openbox
