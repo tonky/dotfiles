@@ -33,6 +33,7 @@ apm() {
 }
 
 alias ffz="sudo fastboot flash zimage"
+alias ffr="sudo fastboot flash radio"
 alias fr="sudo fastboot reboot"
 
 alias cv="adb shell cat /sys/kernel/debug/acpuclock/current_vdd"
