@@ -33,6 +33,14 @@ inoremap [ []<esc>i
 inoremap ' ''<esc>i
 inoremap " ""<esc>i
 
+vnoremap < <gv
+vnoremap > >gv
+
+" F2 - быстрое сохранение
+nmap <F2> :w<cr>
+vmap <F2> <esc>:w<cr>i
+imap <F2> <esc>:w<cr>i
+
 nmap <silent> ,/ :let @/=""<CR>
 cmap w!! w !sudo tee % >/dev/null
 
