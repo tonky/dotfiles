@@ -8,6 +8,8 @@ exec ~/.config/tonky/screens_init &
 
 exec ~/.config/tonky/marble.sh &
 
+exec xset m 5 4 &
+
 #xsetroot -cursor_name left_ptr
 #exec xmonad
 #exec openbox

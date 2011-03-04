@@ -28,6 +28,11 @@ nmap ,N :NERDTreeClose<CR>
 
 nnoremap ; :
 
+inoremap ( ()<esc>i
+inoremap [ []<esc>i
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+
 nmap <silent> ,/ :let @/=""<CR>
 cmap w!! w !sudo tee % >/dev/null
 
