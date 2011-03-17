@@ -23,6 +23,7 @@ alias yv="youtube-viewer"
 alias pp="pep8 --repeat . && pylint --generated-members=objects -E ."
 alias dt="PYTHONPATH=..:. nosetests -P --with-django -w . -e django"
 
+
 alias ar="adb reboot"
 alias arm="adb remount"
 alias arr="adb reboot recovery"
@@ -115,15 +116,17 @@ bindkey -e
 PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
 RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
 
-PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools
+PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine
 
 export EDITOR="/usr/bin/vim"
 export DJANGO_SETTINGS_MODULE="settings"
 export NOSE_WITH_CHERRYPYLIVESERVER=1
 export PACMAN=pacman-color
-export ARCH=arm
-export CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-
-export CROSS_COMPILE=$CCOMPILER
+# export ARCH=arm
+# export CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-
+# export CROSS_COMPILE=$CCOMPILER
+
+source ~/.zshrc_local
 
 # The following lines were added by compinstall
 

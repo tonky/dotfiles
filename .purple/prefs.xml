@@ -30,7 +30,7 @@
 			<pref name='default' type='int' value='1229723526'/>
 			<pref name='startup' type='int' value='0'/>
 			<pref name='startup_current_status' type='bool' value='0'/>
-			<pref name='idleaway' type='int' value='1298902974'/>
+			<pref name='idleaway' type='int' value='1299764428'/>
 			<pref name='isidleaway' type='bool' value='0'/>
 		</pref>
 		<pref name='conversations'>
@@ -432,10 +432,10 @@
 			<pref name='list_visible' type='bool' value='1'/>
 			<pref name='list_maximized' type='bool' value='0'/>
 			<pref name='sort_type' type='string' value='alphabetical'/>
-			<pref name='x' type='int' value='1411'/>
+			<pref name='x' type='int' value='1615'/>
 			<pref name='y' type='int' value='0'/>
-			<pref name='width' type='int' value='248'/>
-			<pref name='height' type='int' value='1048'/>
+			<pref name='width' type='int' value='284'/>
+			<pref name='height' type='int' value='1078'/>
 			<pref name='tooltip_delay' type='int' value='500'/>
 			<pref name='theme' type='string' value=''/>
 		</pref>
@@ -470,7 +470,7 @@
 			<pref name='custom_font' type='string' value=''/>
 			<pref name='chat'>
 				<pref name='entry_height' type='int' value='54'/>
-				<pref name='userlist_width' type='int' value='156'/>
+				<pref name='userlist_width' type='int' value='159'/>
 				<pref name='x' type='int' value='0'/>
 				<pref name='y' type='int' value='0'/>
 				<pref name='width' type='int' value='340'/>
@@ -479,8 +479,8 @@
 			<pref name='im'>
 				<pref name='x' type='int' value='0'/>
 				<pref name='y' type='int' value='0'/>
-				<pref name='width' type='int' value='1409'/>
-				<pref name='height' type='int' value='1048'/>
+				<pref name='width' type='int' value='1613'/>
+				<pref name='height' type='int' value='1078'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>
 				<pref name='entry_height' type='int' value='86'/>
 				<pref name='show_buddy_icons' type='bool' value='1'/>

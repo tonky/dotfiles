@@ -1,5 +1,5 @@
 # scgi_local = /home/tonky/.rtorrent/socket
-safe_sync = "yes"
+safe_sync = yes
 on_finished = move_complete,"execute=mv,-u,$d.get_base_path=,~/downloads/complete/ ;d.set_directory=~/downloads/complete/"
 
 schedule = throttle_1,01:00:00,24:00:00,upload_rate=0

@@ -114,7 +114,7 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
-for s = 1, 1 do
+for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
@@ -134,11 +134,12 @@ for s = 1, 1 do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    local position = "bottom"
+    local position = "top"
     if s == 1 then
         position = "right"
     end
 
+    -- Create the wibox
     mywibox[s] = awful.wibox({ position = position, screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
@@ -227,10 +228,11 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control", "Shift" }, "p", function () awful.util.spawn("/usr/bin/sudo /sbin/poweroff") end),
 
     awful.key({ modkey, "Mod1" }, "f", function () awful.util.spawn("/usr/bin/firefox") end),
+    awful.key({ modkey, "Mod1" }, "n", function () awful.util.spawn("/usr/bin/firefox-nightly") end),
     awful.key({ modkey, "Mod1" }, "p", function () awful.util.spawn("/usr/bin/pidgin") end),
     awful.key({ modkey, "Mod1" }, "s", function () awful.util.spawn("/usr/bin/skype") end),
     awful.key({ modkey, "Mod1" }, "g", function () awful.util.spawn("/usr/bin/gvim") end),
-    awful.key({ modkey, "Mod1" }, "c", function () awful.util.spawn("/usr/bin/chromium") end),
+    awful.key({ modkey, "Mod1" }, "c", function () awful.util.spawn("/usr/bin/chromium --proxy-auto-detect") end),
     awful.key({ "Control", "Mod1" }, "Delete", function () awful.util.spawn("/usr/bin/xscreensaver-command -lock") end),
 
     -- multimedia keyboard keys

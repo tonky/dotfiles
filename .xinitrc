@@ -8,7 +8,7 @@ exec ~/.config/tonky/screens_init &
 
 exec ~/.config/tonky/marble.sh &
 
-exec xset m 5 4 &
+exec xset m 5 3 &
 
 #xsetroot -cursor_name left_ptr
 #exec xmonad
@@ -16,7 +16,7 @@ exec xset m 5 4 &
 
 # sleep 1
 
-exec xmodmap .Xmodmap &
+exec xmodmap ~/.Xmodmap &
 
 exec awesome
 # exec openbox-session
