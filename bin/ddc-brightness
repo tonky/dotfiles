@@ -1,0 +1,12 @@
+if [ -n "$3" ]; then
+    sudo ddccontrol dev:/dev/i2c-$3 -r 0x10 -w $1
+    sudo ddccontrol dev:/dev/i2c-$3 -r 0x12 -w $2
+fi
+
+sudo ddccontrol dev:/dev/i2c-2 -r 0x10 -w $1
+sudo ddccontrol dev:/dev/i2c-3 -r 0x10 -w $1
+
+if [ -n "$2" ]; then
+    sudo ddccontrol dev:/dev/i2c-2 -r 0x12 -w $2
+    sudo ddccontrol dev:/dev/i2c-3 -r 0x12 -w $2
+fi
