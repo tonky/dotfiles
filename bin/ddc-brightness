@@ -1,12 +1,19 @@
+# ok, so the p2770 brightness/contrast of 5/5 is 10/20 for 2443
+# meaning $2 and $3 should be 5/95 and 5/65 respectively
+
 if [ -n "$3" ]; then
     sudo ddccontrol dev:/dev/i2c-$3 -r 0x10 -w $1
     sudo ddccontrol dev:/dev/i2c-$3 -r 0x12 -w $2
+    clear
+    exit
 fi
 
 sudo ddccontrol dev:/dev/i2c-2 -r 0x10 -w $1
-sudo ddccontrol dev:/dev/i2c-3 -r 0x10 -w $1
+sudo ddccontrol dev:/dev/i2c-3 -r 0x10 -w $(($1 + 5))
 
 if [ -n "$2" ]; then
     sudo ddccontrol dev:/dev/i2c-2 -r 0x12 -w $2
-    sudo ddccontrol dev:/dev/i2c-3 -r 0x12 -w $2
+    sudo ddccontrol dev:/dev/i2c-3 -r 0x12 -w $(($2 + 15))
 fi
+
+clear

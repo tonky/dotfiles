@@ -9,6 +9,7 @@ exec ~/.config/tonky/screens_init &
 exec ~/.config/tonky/marble.sh &
 
 exec xset m 5 3 &
+exec xset s 1800 1800
 
 #xsetroot -cursor_name left_ptr
 #exec xmonad

@@ -1,3 +1,5 @@
+lag_max_before_disconnect = 30sec;
+
 servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },

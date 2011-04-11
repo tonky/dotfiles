@@ -77,6 +77,8 @@ set viminfo='50,<1000,s100,%
 set scrolloff=3
 set browsedir=buffer
 set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+set backupdir=/tmp
+set directory=/tmp
 
 
 " Slimv stuff

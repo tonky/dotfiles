@@ -344,7 +344,7 @@ awful.rules.rules = {
     { rule = { class = "Firefox" },
       properties = { tag = tags[2][1] } },
     { rule = { class = "Pidgin" },
-      properties = { tag = tags[1][1] } },
+      properties = { tag = tags[2][3] } },
     { rule = { class = "chromium" },
       properties = { tag = tags[1][3] } },
 }
