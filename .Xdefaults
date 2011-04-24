@@ -41,9 +41,9 @@ URxvt.foreground:   gray90
 
 # URxvt.font:         -*-freemono-bold-r-*-*-18-*-*-*-*-*-*-u
 # URxvt.font:         -*-liberation mono-*-r-*-*-17-*-*-*-*-*-*-u
-URxvt.font:         -*-terminus-bold-*-*-*-20-*-*-*-*-*-*-u
+# URxvt.font:         -*-terminus-bold-*-*-*-20-*-*-*-*-*-*-u
 # URxvt*font:             -*-freemono-*-r-*-*-*-*-*-*-*-*-*-ru
-# URxvt.font:             -*-dejavu sans mono-medium-r-*-*-*-*-*-*-*-*-*-*
+URxvt.font:             -*-dejavu sans mono-medium-r-*-*-*-*-*-*-*-*-*-*
 # URxvt.faceName:     Monospace:pixelsize=18
 URxvt*secondaryScroll: true
 URxvt.perl-ext-common: default,matcher

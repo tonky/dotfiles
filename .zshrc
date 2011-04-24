@@ -30,6 +30,9 @@ alias ar="adb reboot"
 alias arm="adb remount"
 alias arr="adb reboot recovery"
 alias arb="adb reboot bootloader"
+alias amk="adb remount && adb push drivers/net/wireless/bcm4329/bcm4329.ko /system/lib/modules/ && adb reboot bootloader && fastboot flash zimage arch/arm/boot/zImage && fastboot reboot"
+
+alias make_arm="ARCH=arm CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi- CROSS_COMPILE=$CCOMPILER make"
 
 apm() {
     adb push $1 /system/lib/modules/
@@ -124,9 +127,13 @@ export EDITOR="/usr/bin/vim"
 export DJANGO_SETTINGS_MODULE="settings"
 export NOSE_WITH_CHERRYPYLIVESERVER=1
 export PACMAN=pacman-color
-# export ARCH=arm
-# export CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-
-# export CROSS_COMPILE=$CCOMPILER
+export ARCH=arm
+export CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-
+export CROSS_COMPILE=$CCOMPILER
+
+# virtualenvwrapper stuff
+export WORKON_HOME=~/projects/envs
+source /path/to/this/file/virtualenvwrapper.sh
 
 source ~/.zshrc_local
 
