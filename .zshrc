@@ -133,7 +133,7 @@ export CROSS_COMPILE=$CCOMPILER
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/projects/envs
-source /path/to/this/file/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 source ~/.zshrc_local
 

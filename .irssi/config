@@ -105,6 +105,7 @@ channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#teamdesire"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#xoom"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#nookcolor"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
