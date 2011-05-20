@@ -24,7 +24,8 @@
     ds = diff --staged
     h = help
     mnf = merge --no-ff
-    l = log --graph
+    l = log --graph --raw -n 200
+    la = log --graph --raw
     pa = push --all
 	s = status
     r = rebase
