@@ -38,6 +38,10 @@ apm() {
     adb push $1 /system/lib/modules/
 }
 
+aps() {
+    adb push $1 /sdcard/download/
+}
+
 alias ffz="sudo fastboot flash zimage"
 alias ffr="sudo fastboot flash radio"
 alias fr="sudo fastboot reboot"
@@ -51,6 +55,9 @@ dres() { sudo /etc/rc.d/$1 restart }
 c() {
     cd $1
     ls -lh --color
+    if [ -e .venv ]; then
+         workon `cat .venv`
+    fi
 }
 
 gr() {
