@@ -59,6 +59,7 @@
 			<pref name='turn_port' type='int' value='3478'/>
 			<pref name='turn_username' type='string' value=''/>
 			<pref name='turn_password' type='string' value=''/>
+			<pref name='turn_port_tcp' type='int' value='3478'/>
 		</pref>
 		<pref name='proxy'>
 			<pref name='type' type='string' value='none'/>
@@ -77,6 +78,7 @@
 					<pref name='input' type='int' value='10'/>
 					<pref name='output' type='int' value='10'/>
 				</pref>
+				<pref name='silence_threshold' type='int' value='5'/>
 			</pref>
 		</pref>
 	</pref>
@@ -432,10 +434,10 @@
 			<pref name='list_visible' type='bool' value='1'/>
 			<pref name='list_maximized' type='bool' value='0'/>
 			<pref name='sort_type' type='string' value='alphabetical'/>
-			<pref name='x' type='int' value='2880'/>
-			<pref name='y' type='int' value='19'/>
-			<pref name='width' type='int' value='238'/>
-			<pref name='height' type='int' value='1899'/>
+			<pref name='x' type='int' value='1740'/>
+			<pref name='y' type='int' value='119'/>
+			<pref name='width' type='int' value='306'/>
+			<pref name='height' type='int' value='1131'/>
 			<pref name='tooltip_delay' type='int' value='500'/>
 			<pref name='theme' type='string' value=''/>
 		</pref>
@@ -477,10 +479,10 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='1920'/>
-				<pref name='y' type='int' value='19'/>
-				<pref name='width' type='int' value='958'/>
-				<pref name='height' type='int' value='1899'/>
+				<pref name='x' type='int' value='0'/>
+				<pref name='y' type='int' value='119'/>
+				<pref name='width' type='int' value='1738'/>
+				<pref name='height' type='int' value='1131'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>
 				<pref name='entry_height' type='int' value='86'/>
 				<pref name='show_buddy_icons' type='bool' value='1'/>

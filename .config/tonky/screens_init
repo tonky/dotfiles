@@ -1,2 +1,5 @@
-xrandr --output DVI-0 --mode 1920x1080 --rotate normal && xrandr --output DVI-1 --mode 1920x1200 --right-of DVI-0 --rotate left
-xrandr --output DVI-0 --pos 0x350
+#xrandr --screen 0 --output DVI-3 --rotate left
+xrandr --screen 0 --output DVI-0 --mode 1920x1080 --rotate normal --pos 0x350
+xrandr --screen 0 --output DVI-1 --mode 1920x1200 --right-of DVI-0 --rotate left
+#xrandr --screen 0 --output DVI-0 --pos 0x350
+#randr --screen 0 --output DVI-1 pos 0x350

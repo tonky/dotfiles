@@ -1,14 +1,14 @@
-exec setxkbmap -layout us,ru -variant ,winkeys -option grp:caps_toggle,terminate:ctrl_alt_bksp,compose:ralt &
+setxkbmap -layout us,ru -variant ,winkeys -option grp:caps_toggle,terminate:ctrl_alt_bksp,compose:ralt &
 
-exec urxvtd -q -f &
+urxvtd -q -f &
 
-exec ~/.config/tonky/screens_init &
+~/.config/tonky/marble.sh &
 
-exec ~/.config/tonky/marble.sh &
+~/.config/tonky/screens_init &
 
-exec xset m 5 3 &
-exec xset s 1800 1800 &
+xset m 5 3 &
+xset s 1800 1800 &
 
-# exec xmodmap ~/.Xmodmap &
+xmodmap ~/.Xmodmap &
 
-exec awesome
+awesome
