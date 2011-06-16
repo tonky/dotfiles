@@ -144,6 +144,11 @@ source /usr/bin/virtualenvwrapper.sh
 
 source ~/.zshrc_local
 
+setopt promptsubst
+autoload -U promptinit
+promptinit
+prompt wunjo
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
