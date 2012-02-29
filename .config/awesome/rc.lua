@@ -139,8 +139,12 @@ for s = 1, screen.count() do
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
 
+    pos = "top"
+
+    if s == 1 then pos = "right" end
+
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = pos, screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -292,7 +296,7 @@ for i = 1, keynumber do
                   end),
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
-                        local screen = 2
+                        local screen = 1
 
                         local client = client
                         local c = awful.client.focus.history.get(screen, 0)
@@ -304,7 +308,7 @@ for i = 1, keynumber do
                   end),
         awful.key({ modkey, "Mod1" }, "#" .. i + 9,
                   function ()
-                        local screen = 1
+                        local screen = 2
 
                         local client = client
                         local c = awful.client.focus.history.get(screen, 0)

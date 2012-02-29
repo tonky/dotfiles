@@ -106,7 +106,8 @@ channels = (
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#teamdesire"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#xoom"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#nookcolor"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#icsnote"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#trinitykernel"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {

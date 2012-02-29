@@ -1,4 +1,4 @@
-setxkbmap -layout us,ru -variant ,winkeys -option grp:caps_toggle,terminate:ctrl_alt_bksp,compose:ralt &
+setxkbmap -layout "us,ru" -variant ,winkeys -option grp:caps_toggle &
 
 urxvtd -q -f &
 
@@ -12,3 +12,5 @@ xset s 1800 1800 &
 xmodmap ~/.Xmodmap &
 
 awesome
+#e16
+#xmonad
