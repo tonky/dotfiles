@@ -25,17 +25,26 @@ alias yv="youtube-viewer"
 alias pp="pep8 --repeat . && pylint --generated-members=objects -E ."
 alias dt="PYTHONPATH=..:. nosetests -P --with-django -w . -e django"
 
+alias hd="hg diff | less"
+alias hs="hg status"
+alias hl="hg log -l 20 -G | less"
 
 alias ar="adb reboot"
 alias arm="adb remount"
 alias arr="adb reboot recovery"
 alias arb="adb reboot bootloader"
-alias amk="adb remount && adb push drivers/net/wireless/bcm4329/bcm4329.ko /system/lib/modules/ && adb reboot bootloader && fastboot flash zimage arch/arm/boot/zImage && fastboot reboot"
+alias amk="adb remount; adb push drivers/scsi/scsi_wait_scan.ko /system/modules/; adb push drivers/net/wireless/bcm4329/bcm4329.ko /system/modules/ && adb reboot bootloader && sudo fastboot flash zimage arch/arm/boot/zImage && sudo fastboot reboot"
 
-alias make_arm="ARCH=arm CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi- CROSS_COMPILE=$CCOMPILER make"
+# ant install && adb shell am start -n com.tonky.QuickAlarm/.QuickAlarm
+alias ais="ant installd && adb shell am start -n"
+
+
+alias make_arm="ARCH=arm CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi- CROSS_COMPILE=$CCOMPILER make"
+alias make_arm_cs="ARCH=arm CCOMPILER=/opt/CodeSourcery/bin/arm-none-linux-gnueabi- CROSS_COMPILE=$CCOMPILER make"
+alias make_arm_cm="ARCH=arm CCOMPILER=~/projects/android/system/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- CROSS_COMPILE=$CCOMPILER make"
 
 apm() {
-    adb push $1 /system/lib/modules/
+    adb push $1 /system/modules/
 }
 
 aps() {
@@ -47,6 +56,8 @@ alias ffr="sudo fastboot flash radio"
 alias fr="sudo fastboot reboot"
 
 alias cv="adb shell cat /sys/kernel/debug/acpuclock/current_vdd"
+
+alias mp="nosleep mplayer -zoom"
 
 dsta() { sudo /etc/rc.d/$1 start }
 dsto() { sudo /etc/rc.d/$1 stop }
@@ -62,9 +73,9 @@ c() {
 
 gr() {
     if [ "`which ack`" != "ack not found" ] ; then
-        ack -ir $1 *
+        ack -ir $1 * $2
     else
-        grep -ir $1 *
+        grep -ir $1 * $2
     fi
 }
 
@@ -128,26 +139,28 @@ bindkey -e
 PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
 RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
 
-PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine
+PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine:.:..
 
 export EDITOR="/usr/bin/vim"
 export DJANGO_SETTINGS_MODULE="settings"
 export NOSE_WITH_CHERRYPYLIVESERVER=1
 export PACMAN=pacman-color
 export ARCH=arm
-export CCOMPILER=/opt/android-ndk/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-
+export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
 export CROSS_COMPILE=$CCOMPILER
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/projects/envs
 source /usr/bin/virtualenvwrapper.sh
+export PYTHONPATH=.:./tests/fixtures:./tests
 
 source ~/.zshrc_local
+source /etc/profile.d/apache-ant.sh
 
-setopt promptsubst
-autoload -U promptinit
-promptinit
-prompt wunjo
+# setopt promptsubst
+# autoload -U promptinit
+# promptinit
+# prompt wunjo
 
 # The following lines were added by compinstall
 
