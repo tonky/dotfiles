@@ -27,7 +27,7 @@
 			</pref>
 		</pref>
 		<pref name='savedstatus'>
-			<pref name='default' type='int' value='1320843463'/>
+			<pref name='default' type='int' value='1330932484'/>
 			<pref name='startup' type='int' value='0'/>
 			<pref name='startup_current_status' type='bool' value='0'/>
 			<pref name='idleaway' type='int' value='1310413089'/>
@@ -480,7 +480,7 @@
 			</pref>
 			<pref name='im'>
 				<pref name='x' type='int' value='0'/>
-				<pref name='y' type='int' value='0'/>
+				<pref name='y' type='int' value='19'/>
 				<pref name='width' type='int' value='1147'/>
 				<pref name='height' type='int' value='1540'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>

@@ -1,4 +1,4 @@
-lag_max_before_disconnect = 30sec;
+lag_max_before_disconnect = "30sec";
 
 servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
@@ -98,7 +98,10 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "SILC"; };
-  freenode = { type = "IRC"; autosendcmd = "/msg NickServ identify zebra"; };
+  freenode = {
+    type = "IRC";
+    autosendcmd = "/msg NickServ identify zebra";
+  };
 };
 
 channels = (
@@ -276,5 +279,8 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { autolog = "yes"; };
 };
-ignores = ( { level = "JOINS PARTS QUITS"; } );
+ignores = (
+  { level = "JOINS PARTS QUITS"; },
+  { mask = "kakkatauko"; level = "ALL"; }
+);
 logs = { };

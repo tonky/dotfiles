@@ -5,8 +5,11 @@ hardstatus alwayslastline
 # hardstatus string '{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
 altscreen on
 
-bindkey ^[[d prev
-bindkey ^[[c next
+# bindkey ^[[d prev
+# bindkey ^[[c next
+
+bindkey ^[h prev
+bindkey ^[l next
 
 autodetach on
 startup_message off
