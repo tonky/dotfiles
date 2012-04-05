@@ -148,6 +148,8 @@ export PACMAN=pacman-color
 export ARCH=arm
 export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
 export CROSS_COMPILE=$CCOMPILER
+export XDG_CACHE_HOME="/var/tmp"
+
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/projects/envs
