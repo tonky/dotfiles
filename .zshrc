@@ -35,13 +35,7 @@ alias arr="adb reboot recovery"
 alias arb="adb reboot bootloader"
 alias amk="adb remount; adb push drivers/scsi/scsi_wait_scan.ko /system/modules/; adb push drivers/net/wireless/bcm4329/bcm4329.ko /system/modules/ && adb reboot bootloader && sudo fastboot flash zimage arch/arm/boot/zImage && sudo fastboot reboot"
 
-# ant install && adb shell am start -n com.tonky.QuickAlarm/.QuickAlarm
-alias ais="ant installd && adb shell am start -n"
-
-
-alias make_arm="ARCH=arm CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi- CROSS_COMPILE=$CCOMPILER make"
-alias make_arm_cs="ARCH=arm CCOMPILER=/opt/CodeSourcery/bin/arm-none-linux-gnueabi- CROSS_COMPILE=$CCOMPILER make"
-alias make_arm_cm="ARCH=arm CCOMPILER=~/projects/android/system/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- CROSS_COMPILE=$CCOMPILER make"
+alias lsmount="mount | column -t"
 
 apm() {
     adb push $1 /system/modules/
@@ -148,6 +142,8 @@ export PACMAN=pacman-color
 export ARCH=arm
 export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
 export CROSS_COMPILE=$CCOMPILER
+export XDG_CACHE_HOME="/var/tmp"
+
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/projects/envs

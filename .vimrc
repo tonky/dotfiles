@@ -79,7 +79,3 @@ set browsedir=buffer
 set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set backupdir=/tmp
 set directory=/tmp
-
-call pathogen#infect()
-call pathogen#helptags()
-let g:CommandTMaxFiles=30000
