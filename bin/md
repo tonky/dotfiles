@@ -1,0 +1,7 @@
+if [ -z "$1" ]
+then
+    echo "enter drive path, eg. 'mnt_disk sdb5'"
+fi
+
+sudo mount /dev/$1 /mnt
+sudo chown tonky /mnt

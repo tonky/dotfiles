@@ -1,10 +1,11 @@
 colorscheme tonky
-set background=dark
+set background=light
 highlight Cursor guibg=Green guifg=NONE
 
 syntax enable
 
 set fileencodings=ucs-bom,utf-8,cp1251,default,latin1
+au BufRead,BufNewFile *.go set filetype=go
 filetype plugin indent on
 
 autocmd filetype python set expandtab
@@ -13,10 +14,11 @@ autocmd filetype html,xml set listchars-=tab:>.
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-set nopaste
+set paste
 set pastetoggle=<F2>
 
 let NERDTreeQuitOnOpen=1          " Quit on opening files from the tree
+let g:Tb_MaxSize=2                  " Tabbar max size
 
 " Don't display these kinds of files
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
@@ -79,3 +81,5 @@ set browsedir=buffer
 set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set backupdir=/tmp
 set directory=/tmp
+
+set background=dark

@@ -1,6 +1,9 @@
 alias p="sudo pacman"
 alias pacsu="sudo pacman -Syu"
+alias pas="pacaur -Ss"
+alias pai="pacaur -S --noconfirm"
 alias y="yaourt"
+alias ys="yaourt -S --noconfirm"
 
 alias fl="sudo fdisk -l"
 alias v="vim"
@@ -10,17 +13,14 @@ alias v="vim"
 # alias c="cd"
 alias l="ls -lha --color=auto --group-directories-first"
 alias e="less"
-alias pg="pgrep -fl"
+alias pg="pgrep -fa"
 alias g="git"
 alias gpp="git pull && git push"
 alias cl="clyde"
-alias sc="sudo clyde"
-alias sc="sudo clyde"
-alias scs="sudo clyde -S"
-alias ss="sudo clyde -S --noconfirm"
-alias ys="yaourt -S --noconfirm"
+alias sk="sudo kill "
 alias nl="nload -t 2000 -u K -U M"
 alias bw="bwm-ng -t 2000"
+alias nh="sudo nethogs wlan0"
 alias yv="youtube-viewer"
 alias pp="pep8 --repeat . && pylint --generated-members=objects -E ."
 alias dt="PYTHONPATH=..:. nosetests -P --with-django -w . -e django"
@@ -35,7 +35,9 @@ alias arr="adb reboot recovery"
 alias arb="adb reboot bootloader"
 alias amk="adb remount; adb push drivers/scsi/scsi_wait_scan.ko /system/modules/; adb push drivers/net/wireless/bcm4329/bcm4329.ko /system/modules/ && adb reboot bootloader && sudo fastboot flash zimage arch/arm/boot/zImage && sudo fastboot reboot"
 
-alias lsmount="mount | column -t"
+alias lsm="mount | column -t"
+alias hoff="xrandr --output DVI-1 --left-of DVI-0 --mode 1920x1200"
+alias hon="xrandr --output HDMI-0 --right-of DVI-0 --mode 1280x720 && xrandr --output DVI-1 --off"
 
 apm() {
     adb push $1 /system/modules/
@@ -53,9 +55,12 @@ alias cv="adb shell cat /sys/kernel/debug/acpuclock/current_vdd"
 
 alias mp="nosleep mplayer -zoom"
 
-dsta() { sudo /etc/rc.d/$1 start }
-dsto() { sudo /etc/rc.d/$1 stop }
-dres() { sudo /etc/rc.d/$1 restart }
+alias dsta="sudo systemctl start "
+alias dres="sudo systemctl restart "
+alias dsto="sudo systemctl stop "
+alias den="sudo systemctl enable "
+alias ddis="sudo systemctl disable "
+alias dstat="sudo systemctl status "
 
 c() {
     cd $1
@@ -136,22 +141,21 @@ RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
 PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine:.:..
 
 export EDITOR="/usr/bin/vim"
-export DJANGO_SETTINGS_MODULE="settings"
 export NOSE_WITH_CHERRYPYLIVESERVER=1
-export PACMAN=pacman-color
-export ARCH=arm
-export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
-export CROSS_COMPILE=$CCOMPILER
+export PACMAN=pacman
+# export ARCH=arm
+# export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
+# export CROSS_COMPILE=$CCOMPILER
 export XDG_CACHE_HOME="/var/tmp"
+export XZ_OPT="-T 0"
 
+
+# export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/projects/envs
-source /usr/bin/virtualenvwrapper.sh
-export PYTHONPATH=.:./tests/fixtures:./tests
 
 source ~/.zshrc_local
-source /etc/profile.d/apache-ant.sh
 
 # setopt promptsubst
 # autoload -U promptinit

@@ -10,5 +10,7 @@
 # xrandr --output DVI-0 --mode 1920x1200 --right-of DisplayPort-0 --rotate left
 
 # 24rl - 27
-xrandr --output DVI-0 --mode 1920x1080
-xrandr --output DVI-1 --mode 1920x1200 --left-of DVI-0 --rotate left
+xrandr --output HDMI-0 --off
+xrandr --output HDMI-3 --off
+xrandr --output DisplayPort-0 --mode 1920x1080
+xrandr --output DVI-0 --mode 1920x1080 --right-of DisplayPort-0
