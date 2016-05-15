@@ -1,0 +1,4 @@
+export GOPATH="/Users/tonky/projects/gopath"
+eval "$(docker-machine env default)"
+export PATH=$PATH:$GOPATH/bin
+export CDPATH="~/projects:$GOPATH/src"

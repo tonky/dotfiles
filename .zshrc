@@ -1,17 +1,23 @@
 alias p="sudo pacman"
+alias d="docker"
+alias dp="docker ps"
+alias dv="docker volume"
 alias pacsu="sudo pacman -Syu"
 alias pas="pacaur -Ss"
 alias pai="pacaur -S --noconfirm"
 alias y="yaourt"
 alias ys="yaourt -S --noconfirm"
+alias va="vagrant"
+alias vah="vagrant halt"
+alias vau="vagrant up"
+alias vas="vagrant ssh"
 
 alias fl="sudo fdisk -l"
-alias v="vim"
+alias v="nvim"
 alias s="sudo"
-alias sv="sudo vim"
-alias v="vim"
+alias sv="sudo nvim"
 # alias c="cd"
-alias l="ls -lha --color=auto --group-directories-first"
+alias l="ls -lhaG"
 alias e="less"
 alias pg="pgrep -fa"
 alias g="git"
@@ -39,14 +45,6 @@ alias lsm="mount | column -t"
 alias hoff="xrandr --output DVI-1 --left-of DVI-0 --mode 1920x1200"
 alias hon="xrandr --output HDMI-0 --right-of DVI-0 --mode 1280x720 && xrandr --output DVI-1 --off"
 
-apm() {
-    adb push $1 /system/modules/
-}
-
-aps() {
-    adb push $1 /sdcard/download/
-}
-
 alias ffz="sudo fastboot flash zimage"
 alias ffr="sudo fastboot flash radio"
 alias fr="sudo fastboot reboot"
@@ -64,9 +62,9 @@ alias dstat="sudo systemctl status "
 
 c() {
     cd $1
-    ls -lh --color
+    ls -lhG
     if [ -e .venv ]; then
-         workon `cat .venv`
+         source $WORKON_HOME/`cat .venv`/bin/activate
     fi
 }
 
@@ -74,7 +72,7 @@ gr() {
     if [ "`which ack`" != "ack not found" ] ; then
         ack -ir $1 * $2
     else
-        grep -ir $1 * $2
+        grep -Iir $1 * $2
     fi
 }
 
@@ -140,9 +138,7 @@ RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
 
 PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine:.:..
 
-export EDITOR="/usr/bin/vim"
-export NOSE_WITH_CHERRYPYLIVESERVER=1
-export PACMAN=pacman
+export EDITOR="/usr/bin/nvim"
 # export ARCH=arm
 # export CCOMPILER=/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/arm-linux-androideabi-
 # export CROSS_COMPILE=$CCOMPILER
@@ -150,7 +146,7 @@ export XDG_CACHE_HOME="/var/tmp"
 export XZ_OPT="-T 0"
 
 
-# export PYTHONDONTWRITEBYTECODE=1
+export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/projects/envs

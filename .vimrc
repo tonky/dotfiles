@@ -11,11 +11,10 @@ filetype plugin indent on
 autocmd filetype python set expandtab
 autocmd filetype html,xml set listchars-=tab:>.
 
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" set list
+" set listchars=tab:  ,trail:.,extends:#,nbsp:.
 
-set paste
-set pastetoggle=<F2>
+" set pastetoggle=<F2>
 
 let NERDTreeQuitOnOpen=1          " Quit on opening files from the tree
 let g:Tb_MaxSize=2                  " Tabbar max size
@@ -39,20 +38,15 @@ inoremap " ""<esc>i
 vnoremap < <gv
 vnoremap > >gv
 
-" F2 - быстрое сохранение
-nmap <F2> :w<cr>
-vmap <F2> <esc>:w<cr>i
-imap <F2> <esc>:w<cr>i
-
-nmap <silent> ,/ :let @/=""<CR>
 cmap w!! w !sudo tee % >/dev/null
+let mapleader = ","
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set number
 set encoding=utf-8
 set termencoding=utf-8
 set directory=~/.vim/swap,.
-set wrap
+set nowrap
 set ch=1
 " set foldenable
 " set foldmethod=indent
@@ -61,7 +55,6 @@ set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 set autoindent
 set copyindent
 set showmatch
@@ -83,3 +76,11 @@ set backupdir=/tmp
 set directory=/tmp
 
 set background=dark
+
+execute pathogen#infect()
+autocmd FileType python BracelessEnable +indent
+
+let g:go_bin_path = "/Users/tonky/projects/gopath"
+nmap <Leader>r :GoRun %<cr>
+
+set paste
