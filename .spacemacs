@@ -31,6 +31,8 @@ values."
      ;; python
      (python :variables python-test-runner 'pytest)
      git
+	 html
+	 javascript
      ;; markdown
      ;; org
      ;; (shell :variables

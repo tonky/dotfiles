@@ -2,3 +2,7 @@ export GOPATH="/Users/tonky/projects/gopath"
 eval "$(docker-machine env default)"
 export PATH=$PATH:$GOPATH/bin
 export CDPATH="~/projects:$GOPATH/src"
+
+source /tmp/zgp/zshrc.sh
+# an example prompt
+PROMPT='%B%m%~%b$(git_super_status) %# '
