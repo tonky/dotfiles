@@ -1,6 +1,7 @@
 filetype plugin indent on
 syntax on
 set nu
+colorscheme pablo
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -47,10 +48,11 @@ Plug 'alfredodeza/pytest.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
-Plug 'vim-sensible.git'
+Plug 'tpope/vim-sensible'
 Plug 'fatih/vim-go'
 Plug 'elmcast/elm-vim'
 Plug 'tpope/vim-surround'
+Plug 'weynhamz/vim-plugin-minibufexpl'
 call plug#end()
 
 let g:go_fmt_command = "goimports"
