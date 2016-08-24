@@ -1,4 +1,4 @@
-colorscheme tonky
+colorscheme elflord
 set background=light
 highlight Cursor guibg=Green guifg=NONE
 

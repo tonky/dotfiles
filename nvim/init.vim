@@ -1,4 +1,5 @@
 filetype plugin indent on
+colorscheme elflord
 syntax on
 set nu
 
