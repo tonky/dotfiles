@@ -1,7 +1,7 @@
 filetype plugin indent on
-colorscheme elflord
 syntax on
 set nu
+colorscheme pablo
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -26,15 +26,33 @@ set directory=/tmp
 
 nnoremap ; :
 
+" select text after pasting
+noremap gV `[v`]
+
+" and don't lose selection on indent
+vnoremap < <gv
+vnoremap > >gv
+
+" Allows you to easily replace the current word and all its occurrences.
+nnoremap <Leader>rc :%s/\<<C-r><C-w>\>/
+vnoremap <Leader>rc y:%s/<C-r>"/
+
+" Allows you to easily change the current word and all occurrences to something
+" else. The difference between this and the previous mapping is that the mapping
+" below pre-fills the current word for you to change.
+nnoremap <Leader>cc :%s/\<<C-r><C-w>\>/<C-r><C-w>
+vnoremap <Leader>cc y:%s/<C-r>"/<C-r>"
+
 call plug#begin('~/.vim/plugged')
 Plug 'alfredodeza/pytest.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
-Plug 'vim-sensible.git'
+Plug 'tpope/vim-sensible'
 Plug 'fatih/vim-go'
 Plug 'elmcast/elm-vim'
 Plug 'tpope/vim-surround'
+Plug 'weynhamz/vim-plugin-minibufexpl'
 call plug#end()
 
 let g:go_fmt_command = "goimports"
