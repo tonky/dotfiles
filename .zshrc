@@ -17,7 +17,7 @@ alias v="nvim"
 alias s="sudo"
 alias sv="sudo nvim"
 # alias c="cd"
-alias l="ls -lhaG"
+alias l="ls -lha --color"
 alias e="less"
 alias pg="pgrep -fa"
 alias g="git"
@@ -62,7 +62,7 @@ alias dstat="sudo systemctl status "
 
 c() {
     cd $1
-    ls -lhG
+    ls -lha --color
     if [ -e .venv ]; then
          source $WORKON_HOME/`cat .venv`/bin/activate
     fi
@@ -136,7 +136,7 @@ bindkey -e
 PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
 RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
 
-PATH=$PATH:/home/tonky/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine:.:..
+PATH=$PATH:$HOME/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine:.:..
 
 export EDITOR="/usr/bin/nvim"
 # export ARCH=arm
@@ -183,3 +183,5 @@ SAVEHIST=1000
 setopt autocd extendedglob
 setopt hist_ignore_all_dups
 # End of lines configured by zsh-newuser-install
+
+[[ -s "/home/tonky/.gvm/scripts/gvm" ]] && source "/home/tonky/.gvm/scripts/gvm"

@@ -10,9 +10,10 @@ set shell=zsh
 let mapleader=","
 
 map <C-b> :CtrlPBuffer<cr>
-map <Leader>t :w<cr> :Pytest file<cr>
-map <Leader>p :w<cr> :Pytest project<cr>
+map <Leader>t :GoTest!<cr>
+map <Leader>b :GoBuild!<cr>
 map <Leader>m :!mypy --fast-parser %<cr>
+map <Leader>j :bn<cr>
 
 set tabstop=4
 set softtabstop=4

@@ -1,4 +1,4 @@
-export GOPATH="~/projects/go"
+export GOPATH="$HOME/go"
 # eval "$(docker-machine env default)"
 export PATH=$PATH:$GOPATH/bin
 export CDPATH="~/projects:$GOPATH/src"
