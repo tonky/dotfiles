@@ -149,7 +149,7 @@ export XZ_OPT="-T 0"
 export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenvwrapper stuff
-export WORKON_HOME=~/projects/envs
+export WORKON_HOME=~/projects/.envs
 
 source ~/.zshrc_local
 

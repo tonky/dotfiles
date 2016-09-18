@@ -1,6 +1,7 @@
 filetype plugin indent on
 syntax on
 set nu
+set ignorecase
 colorscheme pablo
 
 let g:ctrlp_map = '<c-p>'
@@ -12,6 +13,7 @@ let mapleader=","
 map <C-b> :CtrlPBuffer<cr>
 map <Leader>t :GoTest!<cr>
 map <Leader>b :GoBuild!<cr>
+map <Leader>r :GoRun!<cr>
 map <Leader>m :!mypy --fast-parser %<cr>
 map <Leader>j :bn<cr>
 
@@ -54,7 +56,11 @@ Plug 'fatih/vim-go'
 Plug 'elmcast/elm-vim'
 Plug 'tpope/vim-surround'
 Plug 'weynhamz/vim-plugin-minibufexpl'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'Raimondi/delimitMate'
 call plug#end()
+
+let delimitMate_expand_cr = 2
 
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
@@ -63,12 +69,12 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 "syntastic
-set statusline+=%#warningmsg#
+"set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
