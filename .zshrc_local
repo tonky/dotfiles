@@ -1,7 +1,7 @@
 export GOPATH="$HOME/go"
 # eval "$(docker-machine env default)"
 export PATH=$PATH:$GOPATH/bin
-export CDPATH="~/projects:$GOPATH/src"
+export CDPATH="~/projects:$GOPATH/src/github.com/tonky"
 
 # source /tmp/zgp/zshrc.sh
 # an example prompt

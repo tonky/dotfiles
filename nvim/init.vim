@@ -10,6 +10,8 @@ let g:ctrlp_cmd = 'CtrlP'
 set shell=zsh
 let mapleader=","
 
+inoremap <S-TAB> <C-X><C-O>
+
 map <C-b> :CtrlPBuffer<cr>
 map <Leader>t :GoTest!<cr>
 map <Leader>b :GoBuild!<cr>
@@ -58,6 +60,7 @@ Plug 'tpope/vim-surround'
 Plug 'weynhamz/vim-plugin-minibufexpl'
 "Plug 'jiangmiao/auto-pairs'
 Plug 'Raimondi/delimitMate'
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 call plug#end()
 
 let delimitMate_expand_cr = 2
