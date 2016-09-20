@@ -13,11 +13,15 @@ let mapleader=","
 inoremap <S-TAB> <C-X><C-O>
 
 map <C-b> :CtrlPBuffer<cr>
-map <Leader>t :GoTest!<cr>
+"map <Leader>t :GoTest!<cr>
 map <Leader>b :GoBuild!<cr>
 map <Leader>r :GoRun!<cr>
 map <Leader>m :!mypy --fast-parser %<cr>
 map <Leader>j :bn<cr>
+
+autocmd FileType python map <Leader>t :Pytest file<cr>
+autocmd FileType go map <Leader>t :GoTest!<cr>
+
 
 set tabstop=4
 set softtabstop=4
