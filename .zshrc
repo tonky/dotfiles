@@ -2,11 +2,9 @@ alias p="sudo pacman"
 alias d="docker"
 alias dp="docker ps"
 alias dv="docker volume"
-alias pacsu="sudo pacman -Syu"
-alias pas="pacaur -Ss"
-alias pai="pacaur -S --noconfirm"
 alias y="yaourt"
 alias ys="yaourt -S --noconfirm"
+alias yu="yaourt -Syu"
 alias va="vagrant"
 alias vah="vagrant halt"
 alias vau="vagrant up"
@@ -59,6 +57,17 @@ alias dsto="sudo systemctl stop "
 alias den="sudo systemctl enable "
 alias ddis="sudo systemctl disable "
 alias dstat="sudo systemctl status "
+
+mkenv() {
+	deactivate
+	python -m venv $WORKON_HOME/`cat .venv`
+	source $WORKON_HOME/`cat .venv`/bin/activate
+}
+
+rmenv() {
+	deactivate
+	rm -rf $WORKON_HOME/`cat .venv`
+}
 
 c() {
     cd $1
@@ -133,8 +142,11 @@ function nosleep() {
 
 bindkey -e
 
-PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
+source ~/.zsh/zsh-git-prompt/zshrc.sh
+# PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
 RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
+PS1='$(git_super_status) $ '
+
 
 PATH=$PATH:$HOME/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine:.:..
 
@@ -183,5 +195,3 @@ SAVEHIST=1000
 setopt autocd extendedglob
 setopt hist_ignore_all_dups
 # End of lines configured by zsh-newuser-install
-
-[[ -s "/home/tonky/.gvm/scripts/gvm" ]] && source "/home/tonky/.gvm/scripts/gvm"
