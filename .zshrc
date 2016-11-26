@@ -144,8 +144,8 @@ bindkey -e
 
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 # PS1="$(print '%{\e[1;33m%}[%T] %{\e[1;32m%}%n@%m%{\e[0m%}')$ "
-RPROMPT=$(print '%{\e[0;34m%}%~%{\e[0m%}')
-PS1='$(git_super_status) $ '
+export RPROMPT=$(print '%B%F{cyan}%~%f%b')
+export PS1='$(git_super_status) $ '
 
 
 PATH=$PATH:$HOME/bin/:/opt/android-sdk/platform-tools:/opt/google-appengine:.:..
@@ -162,6 +162,7 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/projects/.envs
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 source ~/.zshrc_local
 
