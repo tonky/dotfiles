@@ -28,6 +28,9 @@
     la = log --graph --raw
     pa = push --all
 	s = status
+	sm = submodule
+	smi = submodule init
+	smu = submodule update
     r = rebase
 
 [branch "*"]

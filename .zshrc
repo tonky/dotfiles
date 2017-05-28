@@ -1,5 +1,6 @@
 alias p="sudo pacman"
 alias d="docker"
+alias dc="docker-compose"
 alias dp="docker ps"
 alias dv="docker volume"
 alias y="yaourt"
@@ -56,7 +57,8 @@ alias dres="sudo systemctl restart "
 alias dsto="sudo systemctl stop "
 alias den="sudo systemctl enable "
 alias ddis="sudo systemctl disable "
-alias dstat="sudo systemctl status "
+
+alias ds="dstat -lrvn 10"
 
 mkenv() {
 	deactivate
@@ -161,7 +163,7 @@ export XZ_OPT="-T 0"
 export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenvwrapper stuff
-export WORKON_HOME=~/projects/.envs
+export WORKON_HOME=~/envs
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 source ~/.zshrc_local

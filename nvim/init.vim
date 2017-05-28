@@ -6,6 +6,7 @@ colorscheme pablo
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*     " MacOSX/Linux
 
 set shell=zsh
 let mapleader=","
@@ -37,6 +38,8 @@ nnoremap ; :
 
 " select text after pasting
 noremap gV `[v`]
+noremap <M-j> :bp<cr>
+noremap <M-k> :bn<cr>
 
 " and don't lose selection on indent
 vnoremap < <gv
@@ -58,13 +61,16 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go'
+Plug 'buoto/gotests-vim'
 " Plug 'elmcast/elm-vim'
 Plug 'tpope/vim-surround'
 Plug 'weynhamz/vim-plugin-minibufexpl'
 "Plug 'jiangmiao/auto-pairs'
 Plug 'Raimondi/delimitMate'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let delimitMate_expand_cr = 2
